@@ -1,0 +1,23 @@
+@Component
+@Autowired
+@Qualifier
+
+INSERT INTO Classrooms
+(ClassName, StudentsEnrolled)
+VALUES
+('Python',5),
+('Api',5),
+('Postman',5),
+('QA',5),
+('SQL',5);
+
+
+CREATE TABLE EnrollmentData
+(
+	EnrollmentId INTEGER PRIMARY KEY,
+	StudentId INTEGER NOT NULL,
+	ClassroomId INTEGER NOT NULL,
+	Grade DECIMAL NOT NULL,
+	FOREIGN KEY (StudentId)REFERENCES students (StudentId),
+	FOREIGN KEY (ClassroomId)REFERENCES Classrooms (StudentId)
+);
